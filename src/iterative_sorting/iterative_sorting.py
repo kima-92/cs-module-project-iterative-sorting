@@ -1,17 +1,34 @@
 # TO-DO: Complete the selection_sort() function below
+
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+
+    # For each element in the array
+    for i in range(0, len(arr)):
+        print(f"i: {i}")
+        # Save the current_index of this element
         cur_index = i
+        # Set smallest_index as current_index
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
 
+        # For each element exept current_index ( y )
+        for y in range(i + 1, len(arr)):
+            print(f"y {y}")
+            # Compare the value in current_index 
+            # to the value in smallest_index
 
-        # TO-DO: swap
-        # Your code here
-
+            # If the value of smallest_index is 
+            # bigger than the value in index y
+            if arr[smallest_index] > arr[y]:
+                # Set smaller_index to y
+                smallest_index = y
+        
+        # If current_index is not smallest_index
+        if cur_index != smallest_index:
+            # Swap the values of current_index and smalest_index
+            arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+            
+    # Return the sorted array
     return arr
 
 
